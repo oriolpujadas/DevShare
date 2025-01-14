@@ -39,11 +39,11 @@ Tecnologías utilizadas
 Tecnología:
   -Uso principal
   
-  -PHP
-    -Lógica de backend
+  -Lógica de backend
+    :PHP
   
-  -MySQL 
-    -Gestión de datos
+  -Gestión de datos 
+    :MySQL
 
-  -HTML5 / CSS / JS
-    -Interfaz de usuario
+  -Interfaz de usuario
+    :HTML5 / CSS / JS
