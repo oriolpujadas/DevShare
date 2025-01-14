@@ -46,8 +46,8 @@ Recuperación de contraseñas sencilla.
 
 Tecnologías utilizadas
 
-Tecnología:
-  -Uso principal
+
+
   
   -Lógica de backend
     : PHP
