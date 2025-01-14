@@ -38,8 +38,11 @@ Tecnologías utilizadas
 
 Tecnología:
   -Uso principal
+  
   -PHP
+  
   -Lógica de backend
+  
   -MySQL
 
 Gestión de datos
