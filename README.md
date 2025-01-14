@@ -40,13 +40,10 @@ Tecnología:
   -Uso principal
   
   -PHP
+    -Lógica de backend
   
-  -Lógica de backend
-  
-  -MySQL
+  -MySQL 
+    -Gestión de datos
 
-Gestión de datos
-
-HTML5 / CSS / JS
-
-Interfaz de usuario
+  -HTML5 / CSS / JS
+    -Interfaz de usuario
