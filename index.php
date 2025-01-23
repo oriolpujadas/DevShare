@@ -29,6 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="./CSS/login.css">
 </head>
 <body>
+    <div class="navbar">
+        <div class="logo-container">
+            <h2>DevShare</h2>
+        </div>
+    </div>
     <h2>LOGIN</h2>
     <form method="POST" action="home.php">
         <label>Username</label>

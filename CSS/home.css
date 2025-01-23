@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-/* Encabezado */
+/*Encabezado*/
 header {
     display: flex;  
     justify-content: space-between;
@@ -20,7 +20,9 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+
+.logo
+{
     font-size: 24px;
     font-weight: bold;
     color: #007bff;
