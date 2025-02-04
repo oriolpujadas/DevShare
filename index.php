@@ -1,25 +1,40 @@
 <?php
 session_start();
-//require 'db.php';
+
+// Configurar conexión a la base de datos
+$servername = "localhost";
+$username_db = "root"; // Cambia esto si tienes otro usuario
+$password_db = ""; // Cambia esto si tienes una contraseña
+$dbname = "devshare"; // Cambia esto por el nombre de tu base de datos
+
+// Crear conexión
+$conn = new mysqli($servername, $username_db, $password_db, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    //$stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-    // $stmt->execute(['username' => $username]);
-    // $user = $stmt->fetch();
+    // Prepare and execute the query
+    $stmt = $conn->prepare("SELECT * FROM usuari WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 
-    // if ($user && password_verify($password, $user['password'])) {
-    //     $_SESSION['user_id'] = $user['id'];
-    //     $_SESSION['username'] = $user['username'];
-    //     header("Location: home.php");
-    //     exit;
-    // } else {
-    //     $error = "Username or password not correct";
-    // }
-
-    
+    // Verify the password
+    if ($user && $password === $user['contraseña']) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        header("Location: home.php");
+        exit;
+    } else {
+        $error = "Username or password not correct";
+    }
 }
 ?>
 
@@ -37,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
     <h2>LOGIN</h2>
-    <form method="POST" action="home.php">
+    <form method="POST" action="">
         <label>Username</label>
         <input type="text" name="username" placeholder="user or email" required>
         <br>

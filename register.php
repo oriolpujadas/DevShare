@@ -31,6 +31,8 @@
     <?php
     // Verificar si se envió el formulario
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
         // Configurar conexión a la base de datos
         $servername = "localhost";
         $username_db = "root"; // Cambia esto si tienes otro usuario
@@ -58,11 +60,11 @@
             echo "<p style='color: red;'>Las contraseñas no coinciden. Inténtalo de nuevo.</p>";
         } else {
             // Encriptar la contraseña
-            $hashed_password = password_hash($contraseña, PASSWORD_DEFAULT);
+           // $hashed_password = password_hash($contraseña, PASSWORD_DEFAULT);
 
             // Preparar consulta SQL para insertar datos
             $stmt = $conn->prepare("INSERT INTO usuari (username, email, firstName, lastName, contraseña) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $username, $email, $firstname, $lastname, $hashed_password);
+            $stmt->bind_param("sssss", $username, $email, $firstname, $lastname, $contraseña);
 
             // Ejecutar consulta y verificar si tuvo éxito
             if ($stmt->execute()) {
